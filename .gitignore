@@ -1,0 +1,10 @@
+#node files
+node_modules
+package-lock.json
+
+#notas 
+notas.md
+
+#env
+.env
+
