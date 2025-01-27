@@ -48,11 +48,13 @@ router.get('/:id', async (req: Request, res: Response) => {
   }
 })
 //Post a Pokemón
+//@ts-ignore
 router.post('/', async (req: Request, res: Response) => {
   try {
     const pokemonData: IPokemon = req.body
     const pokemon = new Pokemon(pokemonData)
-    await pokemon.save()
+    const response = await pokemon.save()
+    console.log('Saved', response)
     res.status(201).json(pokemon)
   } catch (err) {
     if (err instanceof Error) {
